@@ -309,7 +309,12 @@ async function navigate(viewName) {
   content.innerHTML = html;
 
   // Re-initialize Lucide icons
-  lucide.createIcons();
+  if (window.lucide) {
+    lucide.createIcons();
+  } else {
+    console.error('Lucide not loaded');
+  }
+
 
   // Handle active states
   document.querySelectorAll('.nav-item').forEach(el => {
