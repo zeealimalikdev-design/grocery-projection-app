@@ -322,7 +322,25 @@ async function navigate(viewName) {
   if (viewName === 'dashboard') {
     renderChart();
   }
+
+  // Close sidebar on mobile after navigation
+  closeSidebar();
 }
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('mobileOverlay');
+  sidebar.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('mobileOverlay');
+  sidebar.classList.remove('active');
+  overlay.classList.remove('active');
+}
+
 
 function attachViewEvents(viewName) {
   if (viewName === 'inventory') {
@@ -501,5 +519,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     navigate(currentView);
   });
 
+  document.getElementById('menuToggle').addEventListener('click', toggleSidebar);
+  document.getElementById('mobileOverlay').addEventListener('click', closeSidebar);
+
   navigate('dashboard');
 });
+
