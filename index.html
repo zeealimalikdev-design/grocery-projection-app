@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocereal - Distribution Projections</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <aside id="sidebar">
+    <div class="logo">
+      <i data-lucide="sprout"></i>
+      <span>Grocereal</span>
+    </div>
+    <div class="currency-selector" style="margin-bottom: 2rem;">
+      <label
+        style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Base
+        Currency</label>
+      <select id="currencySelect"
+        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem; width: 100%;">
+        <option value="PKR">PKR (Rs.)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="AED">AED (د.إ)</option>
+      </select>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#" class="nav-item active" data-view="dashboard">
+        <i data-lucide="layout-dashboard"></i>
+        <span class="nav-text">Dashboard</span>
+      </a>
+      <a href="#" class="nav-item" data-view="inventory">
+        <i data-lucide="package"></i>
+        <span class="nav-text">Inventory</span>
+      </a>
+      <a href="#" class="nav-item" data-view="expenses">
+        <i data-lucide="wallet"></i>
+        <span class="nav-text">Expenses</span>
+      </a>
+      <a href="#" class="nav-item" data-view="projections">
+        <i data-lucide="trending-up"></i>
+        <span class="nav-text">Projections</span>
+      </a>
+    </nav>
+
+    <div style="margin-top: auto; padding-top: 2rem;">
+      <button id="exportBtn" class="btn btn-secondary" style="width: 100%; margin-bottom: 1rem;">
+        <i data-lucide="download"></i>
+        <span class="nav-text">Export CSV</span>
+      </button>
+      <div class="gemini-footer">
+        © 2026 Powered by AUD AI TECH LLC
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div id="content">
+      <!-- Content will be injected here -->
+    </div>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
