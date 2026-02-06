@@ -333,18 +333,22 @@ async function navigate(viewName) {
 }
 
 function toggleSidebar() {
+  console.log('Toggling sidebar...');
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('mobileOverlay');
   sidebar.classList.toggle('active');
   overlay.classList.toggle('active');
+  console.log('Sidebar classes:', sidebar.className);
 }
 
 function closeSidebar() {
+  console.log('Closing sidebar...');
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('mobileOverlay');
   sidebar.classList.remove('active');
   overlay.classList.remove('active');
 }
+
 
 
 function attachViewEvents(viewName) {
