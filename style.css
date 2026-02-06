@@ -356,28 +356,44 @@ td {
 
 @media (max-width: 768px) {
     .mobile-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background-color: var(--bg-card);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        position: sticky;
-        top: 0;
-        z-index: 90;
-        margin: -1rem -1rem 1rem -1rem;
+        display: none !important;
     }
 
-    .mobile-header .logo {
-        margin-bottom: 0;
-        font-size: 1.25rem;
+    #fabMenu {
+        display: flex;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: white;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+        z-index: 200;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    #fabMenu:active {
+        transform: scale(0.9);
+    }
+
+    #fabMenu i {
+        width: 28px;
+        height: 28px;
     }
 
     #sidebar {
         transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         width: 280px;
+        border-right: none;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     #sidebar.active {
@@ -390,9 +406,9 @@ td {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(4px);
-        z-index: 95;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        z-index: 150;
         display: none;
         opacity: 0;
         transition: opacity 0.3s ease;
@@ -407,6 +423,8 @@ td {
         margin-left: 0;
         width: 100%;
         padding: 1rem;
+        padding-bottom: 6rem;
+        /* Space for FAB */
     }
 
     .chart-container {
@@ -415,9 +433,10 @@ td {
     }
 }
 
-.mobile-header {
+#fabMenu {
     display: none;
 }
+
 
 
 .gemini-footer {

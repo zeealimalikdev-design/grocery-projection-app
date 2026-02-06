@@ -519,8 +519,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     navigate(currentView);
   });
 
-  document.getElementById('menuToggle').addEventListener('click', toggleSidebar);
+  document.getElementById('fabMenu').addEventListener('click', toggleSidebar);
   document.getElementById('mobileOverlay').addEventListener('click', closeSidebar);
+
 
   navigate('dashboard');
 });
